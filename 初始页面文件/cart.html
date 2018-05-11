@@ -63,7 +63,7 @@
                   </ul>
                 </div>
                 <ul class="cart-item-list">
-                  <li>
+                  <li v-for="item in productList">
                     <div class="cart-tab-1">
                       <div class="cart-item-check">
                         <a href="javascript:void 0" class="item-check-btn">
@@ -71,10 +71,10 @@
                         </a>
                       </div>
                       <div class="cart-item-pic">
-                        <img src="img/goods-1.jpg" alt="烟">
+                        <img :src="item.productImage" alt="烟">
                       </div>
                       <div class="cart-item-title">
-                        <div class="item-name">黄鹤楼香烟</div>
+                        <div class="item-name">{{ item.productName}}</div>
                       </div>
                       <div class="item-include">
                         <dl>
@@ -84,14 +84,14 @@
                       </div>
                     </div>
                     <div class="cart-tab-2">
-                      <div class="item-price"></div>
+                      <div class="item-price">{{ item.productPrice }}</div>
                     </div>
                     <div class="cart-tab-3">
                       <div class="item-quantity">
                         <div class="select-self select-self-open">
                           <div class="quantity">
                             <a href="javascript:void 0"></a>
-                            <input type="text" value="0" disabled>
+                            <input type="text" value="0">
                             <a href="javascript:void 0"></a>
                           </div>
                         </div>
@@ -163,5 +163,6 @@
 
     <script src="js/lib/vue.min.js"></script>
     <script src="js/lib/vue-resource.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
